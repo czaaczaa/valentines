@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useEffect } from "react";
+import { assetPath } from "@/lib/basePath";
 
 export default function InvitePage() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -72,7 +73,7 @@ export default function InvitePage() {
         <video
           ref={videoRef}
           id="video"
-          src="/ok.mp4"
+          src={assetPath("/ok.mp4")}
           muted
           autoPlay
           playsInline

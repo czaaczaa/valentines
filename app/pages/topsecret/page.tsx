@@ -5,6 +5,7 @@ import { ButtonGroupBasic } from "@/components/ui/previous-next-button-group";
 import { useRouter } from "next/navigation";
 import { Carousel } from "@/components/ui/carousel";
 import { useState } from "react";
+import { assetPath } from "@/lib/basePath";
 
 export default function Home() {
   const router = useRouter();
@@ -115,32 +116,32 @@ export default function Home() {
   const SaturdaySlides = [
     {
       title: "Houston!",
-      src: "/caption.jpg",
+      src: assetPath("/caption.jpg"),
      
     },
     {
       title: "Explore the Alternative Plan!",
-      src: "/HP_The_Commons_Aerial_8.webp",
+      src: assetPath("/HP_The_Commons_Aerial_8.webp"),
       
     },
     {
       title: "Explore the Alternative Plan!",
-      src: "/hinodeya.jpg",
+      src: assetPath("/hinodeya.jpg"),
       
     },
     {
       title: "Explore the Alternative Plan!",
-      src: "/ramenbestest.jpg",
+      src: assetPath("/ramenbestest.jpg"),
       
     },
     {
       title: "Explore the Alternative Plan!",
-      src: "/dg.webp",
+      src: assetPath("/dg.webp"),
       
     },
     {
       title: "Explore the Alternative Plan!",
-      src: "/ch.webp",
+      src: assetPath("/ch.webp"),
       
     },
   ];
@@ -148,22 +149,22 @@ export default function Home() {
   const FridaySlides = [
     {
       title: "ascension!!",
-      src: "/ascension.jpg",
+      src: assetPath("/ascension.jpg"),
      
     },
     {
       title: "Explore the Alternative Plan!",
-      src: "/nonna.jpg",
+      src: assetPath("/nonna.jpg"),
       
     },
     {
       title: "Explore the Alternative Plan!",
-      src: "/klyde.jpg",
+      src: assetPath("/klyde.jpg"),
       
     },
     {
       title: "Explore the Alternative Plan!",
-      src: "/frida.jpg",
+      src: assetPath("/frida.jpg"),
       
     },
   ];
@@ -178,7 +179,7 @@ export default function Home() {
         }
       >
         <img 
-          src="/ghibli.gif"
+          src={assetPath("/ghibli.gif")}
           alt="hero"
           className="mx-auto rounded-2xl object-contain h-full w-full max-h-[600px]"
         />
