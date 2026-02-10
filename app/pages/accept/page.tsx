@@ -7,13 +7,13 @@ import { useEffect } from 'react';
 function page() {
     const router = useRouter();
     const words = [
-    "Hello Emily,",
-    "You might be wondering what you're looking at right now.",
-    "Well, I'm here to tell you",
-    "that this is me officially asking you",
-    "yes YOU!!!!",
-    "to be my Valentine!!!",
-
+  "Hi Minyoung,",
+   "You're probably wondering what this is...",
+   "Well, I'm here to tell you",
+   "That i'm asking you",
+   "yes...Minyoung Jang... YOU!!!!",
+   "🥁🥁🥁",
+   "to be my Valentine!!!",
   ]
   useEffect(() => {
         const timer = setTimeout(() => {
@@ -23,6 +23,7 @@ function page() {
         return () => clearTimeout(timer);
     }, [router, words]);
   
+
   return (
     <div className="flex items-center justify-center min-h-screen">
       <div className="text-4xl font-bold">

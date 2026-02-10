@@ -8,142 +8,103 @@ import { useState } from "react";
 
 export default function Home() {
   const router = useRouter();
-  const [selectedCity, setSelectedCity] = useState<'houston' | 'collegestation'>('houston');
+  const [selectedDay, setSelectedDay] = useState<'friday' | 'saturday'>('friday');
 
-  const CSTimeline = [
+  const FridayTimeline = [
     
      {
-      title: "12:00 PM",
+      title: "10:00 AM",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
-            Lock In (You're probably busy if we're in college station)
+            Breakfast at Ascension Coffee: Small pastry and drinks!
           </p>
           <p className="text-neutral-600 dark:text-neutral-400 text-xs">
-            📍 501 University Dr.
+            📍 1621 Oak Lawn Ave, Dallas, TX 75207
           </p>
         </div>
       ),
     },
     {
-      title: "5:00 PM",
+      title: "1:00 PM",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
-            Stella Southern Cafe (Beignets ) / POV Cafe (Lake view) 
+            Lunch at Nona Tabu: Michelin and Bib Gourmand star Italian restaraunt!
           </p>
           <p className="text-neutral-600 dark:text-neutral-400 text-xs">
-            📍 4040 Hwy 6 #100, College Station, TX 77845 / 4114 Lake Atlas Dr, Bryan, TX 77807
-          </p>
-        </div>
-      ),
-    },
-     {
-      title: "6:00 PM",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
-            Lake Walk at Lake Atlas
-          </p>
-          <p className="text-neutral-600 dark:text-neutral-400 text-xs">
-            📍 4107 Lake Atlas Dr, Bryan, TX
+            📍 4115 Lomo Alto Dr, Dallas, TX 75219
           </p>
         </div>
       ),
     },
      {
-      title: "8:30 PM",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
-            Candlelight Concert
-          </p>
-          <p className="text-neutral-600 dark:text-neutral-400 text-xs">
-            📍 217 West 26th Street, Bryan, Texas.
-          </p>
-        </div>
-      ),
-    },
-    
-  ];
-
-  const HoustonTimeline = [
-    {
-      title: "11:00 PM",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
-            Balloon Museum 
-          </p>
-          <p className="text-neutral-600 dark:text-neutral-400 text-xs">
-            📍 2501 Commerce St, Houston, TX 77003 (EaDo)
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: "12:30 AM",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
-            Hermann Park 
-          </p>
-          <p className="text-neutral-600 dark:text-neutral-400 text-xs">
-            📍 6001 Fannin St, Houston, TX 77030
-          </p>
-        </div>
-      ),
-    },
-    
-    {
-      title: "1:30 PM",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
-            Annkello Kahawa Cafe
-          </p>
-          <p className="text-neutral-600 dark:text-neutral-400 text-xs">
-            📍 5333 Westheimer Rd Suite 101, Houston, TX 77056
-          </p>
-        </div>
-      ),
-    },
-    
-    {
-      title: "2:00 PM",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
-            Ramen Moto
-          </p>
-          <p className="text-neutral-600 dark:text-neutral-400 text-xs">
-            📍 2320 W Alabama St, Houston, TX 77098
-          </p>
-        </div>
-      ),
-    },
-    {
-      title: "2:30 PM",
-      content: (
-        <div>
-          <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
-            Discovery Green
-          </p>
-          <p className="text-neutral-600 dark:text-neutral-400 text-xs">
-            📍 1500 McKinney St, Houston, TX 77010
-          </p>
-        </div>
-      ),
-    },
-    {
       title: "4:00 PM",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
-            Nap!!!
+            Klyde Warren Park Stroll
           </p>
           <p className="text-neutral-600 dark:text-neutral-400 text-xs">
-            📍 501 University Dr.
+            📍 2012 Woodall Rodgers Fwy, Dallas, TX 75201
+          </p>
+        </div>
+      ),
+    },
+     {
+      title: "5:30 PM",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
+            Dallas Arboretum and Botanical Garden Evening Stroll
+          </p>
+          <p className="text-neutral-600 dark:text-neutral-400 text-xs">
+            📍 1500 W Mockingbird Ln, Dallas, TX 75211
+          </p>
+        </div>
+      ),
+    },
+
+
+  ];
+  const SaturdayTimeline = [
+    {
+      title: "10:00 AM",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
+            Canal Walk at Mandalay Canal in Irving
+          </p>
+          <p className="text-neutral-600 dark:text-neutral-400 text-xs">
+            215 Mandalay Canal, Irving, TX 75039
+          </p>
+        </div>
+      ),
+    },
+    {
+      title: "02:00 PM",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
+            Matcha Matcha Amor and Floral Arrangements at Cafe Frida
+          </p>
+          <p className="text-neutral-600 dark:text-neutral-400 text-xs">
+            📍 2023 Greenville Ave Suite 130, Dallas, TX
+          </p>
+        </div>
+      ),
+    },
+    
+
+    {
+      title: "07:00 PM",
+      content: (
+        <div>
+          <p className="text-neutral-800 dark:text-neutral-200 text-sm mb-4">
+            Hinodeya Ramen & Bar with Leo & Vicky
+          </p>
+          <p className="text-neutral-600 dark:text-neutral-400 text-xs">
+            📍 1611 Greenville Ave, Dallas, TX 75206
           </p>
         </div>
       ),
@@ -151,7 +112,7 @@ export default function Home() {
     
   ];
 
-  const HoustonSlides = [
+  const SaturdaySlides = [
     {
       title: "Houston!",
       src: "/caption.jpg",
@@ -164,7 +125,7 @@ export default function Home() {
     },
     {
       title: "Explore the Alternative Plan!",
-      src: "/matcha.jpeg",
+      src: "/hinodeya.jpg",
       
     },
     {
@@ -184,25 +145,25 @@ export default function Home() {
     },
   ];
 
-  const CS_Slides = [
+  const FridaySlides = [
     {
-      title: "Houston!",
-      src: "/ch.webp",
+      title: "ascension!!",
+      src: "/ascension.jpg",
      
     },
     {
       title: "Explore the Alternative Plan!",
-      src: "/stella.jpg",
+      src: "/nonna.jpg",
       
     },
     {
       title: "Explore the Alternative Plan!",
-      src: "/atlas.jpg",
+      src: "/klyde.jpg",
       
     },
     {
       title: "Explore the Alternative Plan!",
-      src: "/candle.avif",
+      src: "/frida.jpg",
       
     },
   ];
@@ -212,12 +173,12 @@ export default function Home() {
       <ContainerScroll
         titleComponent={
           <h1 className="text-4xl font-bold text-pink-600">
-            To be My Valentine!!!!!!
+            To be My Valentine ! 
           </h1>
         }
       >
         <img 
-          src="/valentines-day-icegif-27.gif"
+          src="/ghibli.gif"
           alt="hero"
           className="mx-auto rounded-2xl object-contain h-full w-full max-h-[600px]"
         />
@@ -225,43 +186,43 @@ export default function Home() {
       
       <div className="flex justify-center items-center px-4 py-8 bg-pink-50">
         <h2 className="text-3xl font-bold text-center max-w-4xl leading-relaxed text-pink-800">
-          Since you're super busy and you usually plan things, I thought I'd go ahead and make two itineraries just in case we don't go to Houston! You can pick which ones you like and I'll book the reservations too!!!
+          I've made out our plans for the weekend that you're here in Dallas! 
         </h2>
       </div>
      
       <div className="flex justify-center gap-4 py-8 bg-pink-50">
         <button 
-          onClick={() => setSelectedCity('houston')}
+          onClick={() => setSelectedDay('friday')}
           className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-            selectedCity === 'houston' 
+            selectedDay === 'friday' 
               ? 'bg-pink-400 text-white shadow-lg hover:bg-pink-500' 
               : 'bg-pink-100 text-pink-700 hover:bg-pink-200'
           }`}
         >
-          Houston
+          Friday
         </button>
         <button 
-          onClick={() => setSelectedCity('collegestation')}
+          onClick={() => setSelectedDay('saturday')}
           className={`px-6 py-3 rounded-lg font-semibold transition-all ${
-            selectedCity === 'collegestation' 
+            selectedDay === 'saturday' 
               ? 'bg-pink-400 text-white shadow-lg hover:bg-pink-500' 
               : 'bg-pink-100 text-pink-700 hover:bg-pink-200'
           }`}
         >
-          College Station
+          Saturday
         </button>
       </div>
 
       <div className="bg-pink-50">
-        {selectedCity === 'houston' ? (
-          <Carousel slides={HoustonSlides} />
+        {selectedDay === 'saturday' ? (
+          <Carousel slides={SaturdaySlides} />
         ) : (
-          <Carousel slides={CS_Slides} />
+          <Carousel slides={FridaySlides} />
         )}
       </div>
       
       <div className="bg-pink-50">
-        <Timeline key={selectedCity} data={selectedCity === 'houston' ? HoustonTimeline : CSTimeline} />
+        <Timeline key={selectedDay} data={selectedDay === 'saturday' ? SaturdayTimeline : FridayTimeline} />
       </div>
 
       <div className="bg-pink-50">

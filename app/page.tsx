@@ -11,8 +11,8 @@ export default function PromptValidator() {
 
 
   // Define your question and correct answer
-  const correctAnswer = "Vivis bubble tea chicken"; // Change this to your answer
-  const question = "What's the best thing in the world?"; // Change this to your question
+  const correctAnswer: string = "Geometry Dash"; // Change this to your answe
+  const question: string = "What's the best videogame in the entire world?"; // Change this to your question
 
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -33,7 +33,7 @@ export default function PromptValidator() {
     if (isCorrect) {
       const timer = setTimeout(() => {
         router.push("/pages/accept");
-      }, 1500); // Wait 1.5 seconds to show the success message
+      }, 3000); // Wait 1.5 seconds to show the success message
 
       return () => clearTimeout(timer);
     }
@@ -61,13 +61,13 @@ export default function PromptValidator() {
             
             {showError && (
               <p className="text-rose-600 text-sm mt-2 font-medium">
-                Incorrect answer. Try again!
+                Incorrect answer. Try again! Hint: It's dependent on music!
               </p>
             )}
             
             {isCorrect && (
               <p className="text-emerald-600 text-sm mt-2 font-medium animate-pulse">
-                ✓ Correct! Now taking you to the secret page...
+                ✓ Correct! Initiating system access...
               </p>
             )}
           </div>
